@@ -1,0 +1,29 @@
+(@Transactional)
+fail between transaction - inconsistent -> we need to roll back the changes
+
+ACID:
+=====
+A - Atomicity   -> either successful trnsaction or all the chnages to be revert back.
+C - Consistency -> leaving the system in consistent state irrespective of whether transaction suceed or failed
+I - Isolation   -> How hnages visible within transcation to other transaction.
+D - Durabilty   -> Once transcation is successful even if other system failures happened.
+
+// 2 transcations running in parallel
+dirty read -> another trans reading other modifying transaction before completing it.
+Non Repeatable read -> when readig the same value twice during transction, return the 2 diff values (data)
+Phanthom read -> when readig the same value on diff time a during transction, return the diff values (rows)
+
+ISOLATION LEVELS (4)
+====================
+Read uncommitted
+Read committed -> Mostly used
+Repeatable Read
+Serializable -> good but poor performance
+
+
+
+
+
+
+
+

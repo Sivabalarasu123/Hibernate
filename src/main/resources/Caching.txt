@@ -1,0 +1,24 @@
+Caching, we can see in background while exeuting the same query again.
+
+First Level Caching (By default)-> Within the boundary (persistence context) of single transaction.
+
+Second Level Caching (Need configuration) -> 
+dependency - eh cach
+
+config - 3 steps
+
+#1. Enable second level cache -> spring.jpa.properities.hibernate.cache.use_second_level_cache=true
+
+#2. Specify the caching framwork -> spring.jpa.properities.hibernate.cache.region.factory_class= EhCachingRegionFactory(copy qualifiedName) 
+
+#3. Only cachhe what I tell to cache -> spring.jpa.properities.javax.persistence.sharedCache.mode=ENABLE_SELECTIVE
+
+logging.level.net.sf.ehcache=debug
+
+#4. What data to cache -> enable caching for entity using @Cacheable Annotation
+
+@Cacheable(javax.persistence)
+public class Course
+{
+
+}
